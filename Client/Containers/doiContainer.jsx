@@ -6,4 +6,4 @@ const doiContainer = () => {
   )
 }
 
-module.exports = doiContainer;
+export default doiContainer;

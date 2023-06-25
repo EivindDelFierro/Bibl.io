@@ -8,4 +8,4 @@ const topBar = () => {
   )
 }
 
-module.exports = topBar;
+export default topBar;
