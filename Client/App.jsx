@@ -1,14 +1,14 @@
-import topBar from "./Components/topBar";
-import bottomBar from "./Components/bottomBar";
-import doiContainer from "./Containers/doiContainer";
+import React from "react";
+import TopBar from "./components/topBar.jsx";
+import BottomBar from "./components/bottomBar.jsx";
+import CentralContainer from "./container/centralContainer.jsx";
 
-// top level application layer. Renders visible area for user
-const App = () => {
-  return (
+const App = (prop) => {
+  return(
     <div>
-      <topBar />
-      <interativeArea />
-      <bottomBar />
+      <TopBar/>
+      <CentralContainer/>
+      <BottomBar/>
     </div>
   )
 }

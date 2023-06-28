@@ -1,11 +1,13 @@
-const topBar = () => {
-  return (
-    <div className="header">
-      <p id="Title">Bibl.io</p>
-      <p id="SubTittle">DOI Citation Tool</p>
-      <button id="Bibliography">Bibliography</button>
+import React from "react";
+
+const TopBar = (props) => {
+  return(
+    <div className="bars">
+        <span id="biblioName">Bibli.io</span>
+        <span id="biblioSubtitle">: DOI Citation Engine</span>
+        <button id="bibliography" className="button">My Citations</button>
     </div>
   )
 }
 
-export default topBar;
+export default TopBar;
