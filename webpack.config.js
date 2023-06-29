@@ -2,10 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './client/index.js',
+  entry: path.resolve(__dirname, 'src/index.js'), //./client/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    // publicPath: './dist/assets',
+    filename: 'main.js'
   },
   mode: process.env.NODE_ENV,
   module: {
@@ -21,20 +22,34 @@ module.exports = {
         }
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|json|xml|ico|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/',
+              publicPath: '/'
+            }
+          }
+        ]
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
+      // hash: true,
       title: 'Development',
-      template: 'index.html'
+      template: path.resolve(__dirname, 'src/index.html')
     })
   ],
   devServer: {
     static: {
       publicPath: 'http://localhost:3000',
-    }
+    },
   }
 }

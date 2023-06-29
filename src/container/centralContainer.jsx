@@ -5,7 +5,7 @@ import FormatSelectorContainer from "./formatSelectorContainer.jsx";
 
 const CentralContainer = (props) => {
   return(
-    <div>
+    <div className="centralContainer">
       <DoiContainer/>
       <FormatSelectorContainer/>
       <CitationContainer/>

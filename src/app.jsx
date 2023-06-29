@@ -5,7 +5,7 @@ import CentralContainer from "./container/centralContainer.jsx";
 
 const App = (prop) => {
   return(
-    <div>
+    <div id="App">
       <TopBar/>
       <CentralContainer/>
       <BottomBar/>

@@ -1,0 +1,112 @@
+/* Import the fonts: Cabin, Caprasimo, Oxygen */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@0;1&family=Caprasimo&family=Oxygen:wght@300;400;700&display=swap');
+
+/* 
+teal #7ED0C4
+lightblue #66AFB6
+orange #FA931C 
+dark text #515A59
+light text #CCCCCC
+*/
+
+html {
+  background-color: rgb(39, 39, 39);
+}
+
+#App {
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #515A59;
+}
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FA931C;
+  height: 30px;
+  padding: 10px
+}
+
+.topLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.biblioName {
+  padding-right: 5px;
+}
+
+img {
+  padding-right: 10px;
+}
+
+#biblioName {
+  font-size: xx-large;
+  font-family: 'Caprasimo';
+}
+
+#biblioSubtitle {
+  font-size: x-small;
+}
+
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #66AFB6;
+  padding: 10px;
+}
+
+.centralContainer {
+  display: grid;
+  grid-template: auto/ repeat(2, 1fr);
+  grid-template-areas:
+    "Doi Citation"
+    "Format Citation"
+    "blank Citation"
+    "blank Citation";
+  align-items: start;
+  justify-items: center;
+  background: #7ED0C4;
+  color: #373d3d;
+  font-size: larger;
+  padding: 10px;
+  height: 500px;
+  
+}
+
+#doiContainer {
+  grid-area: Doi;
+}
+
+#formatSelectorContainer {
+  grid-area: Format
+}
+
+#citationContainer{
+  grid-area: Citation;
+  align-self: center;
+}
+
+button {
+  background: rgba(233, 233, 233, 0.904);
+  border-color: #66AFB6;
+  border-radius: 6px;
+  margin: 2px;
+  padding: 5px;
+  font-family: 'Oxygen';
+}
+
+.fadedButton {
+  background: #72c5cc;
+  border-style: solid;
+  color: rgb(110, 110, 110)
+}
+
+#citationsButton {
+  border-color: #d17c1a;
+  background-color: #e0851c ;
+  border-style: solid;
+  color: rgb(255, 255, 255)
+}

@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import * as actions from "../actions/actions";
 import store from "../store";
 
+// test: 10.47366/sabia.v5n1a3
+
 const DoiContainer = (props) => {
   const dispatch = useDispatch();
 
@@ -14,17 +16,20 @@ const DoiContainer = (props) => {
 
   // define a function to perform doiLookup on buttonclick
   const doiLookup = (event) => {
-    const currentString = store.getState().doi.currentString
+    const currentString = store.getState().doi.currentString;
     dispatch(actions.searchDoiActionCreator(currentString))
   }
 
   return(
-    <div>
-      <p>DOI Input #</p>
+    <div id="doiContainer">
+      <div id="inputArea">
+        <p>DOI Input #</p>
 
-      <input type="text" name="DOI_Number_Input" id="DOI_Number_Input" onChange={event => doiFormUpdate(event)} value="10.47366/sabia.v5n1a3"></input>
-
-      <button className="button" onClick={event => doiLookup(event)}>DOI Lookup</button>
+        <input type="text" name="DOI_Number_Input" id="DOI_Number_Input" onChange={event => doiFormUpdate(event)} placeholder="10.nnnnnn/example"></input>
+      </div>
+      <div>
+        <button className="button" onClick={event => doiLookup(event)}>DOI Lookup</button>
+      </div>
     </div>
   )
 }

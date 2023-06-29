@@ -16,7 +16,7 @@ export const searchDoiActionCreator = () => ({
 
 export const updateCitationActionCreator = (citation) => ({
   type: types.UPDATE_CITATION,
-  payload: 'test' //need to add payload
+  payload: citation //need to add payload
 })
 
 export const makeDoiObjActionCreator = (doiObj) => ({
